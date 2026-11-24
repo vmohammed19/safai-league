@@ -1,7 +1,7 @@
 import { Home, Flag, CalendarDays, User } from 'lucide-react';
 import { useLang } from '@/context/LanguageContext';
 
-export type Tab = 'home' | 'report' | 'drives' | 'profile';
+export type Tab = 'home' | 'report' | 'report-form' | 'drives' | 'profile';
 
 export function BottomNav({
   active,

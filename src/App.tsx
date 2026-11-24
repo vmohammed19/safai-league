@@ -4,6 +4,7 @@ import { Header } from '@/components/Header';
 import { BottomNav, type Tab } from '@/components/BottomNav';
 import { HomePage } from '@/pages/HomePage';
 import { ReportPage } from '@/pages/ReportPage';
+import { ReportsPage } from '@/pages/ReportsPage';
 import { DrivesPage } from '@/pages/DrivesPage';
 import { ProfilePage } from '@/pages/ProfilePage';
 
@@ -17,11 +18,15 @@ function App() {
           <Header />
           <main className="pb-24">
             {tab === 'home' && <HomePage onNavigate={setTab} />}
-            {tab === 'report' && <ReportPage />}
+            {tab === 'report' && <ReportsPage onNavigate={setTab} />}
+            {tab === 'report-form' && <ReportPage />}
             {tab === 'drives' && <DrivesPage />}
             {tab === 'profile' && <ProfilePage />}
           </main>
-          <BottomNav active={tab} onChange={setTab} />
+          <BottomNav
+            active={tab === 'report-form' ? 'report' : tab}
+            onChange={setTab}
+          />
         </div>
       </div>
     </LanguageProvider>
